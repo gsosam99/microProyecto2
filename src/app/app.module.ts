@@ -12,10 +12,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // 2.- Import Environment Configuration
 import { environment } from '../environments/environment';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
