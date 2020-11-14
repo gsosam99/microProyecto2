@@ -8,6 +8,7 @@ import { FavoritesViewComponent } from './views/favorites-view/favorites-view.co
 
 import { ProfileNavbarComponent } from './profile-components/profile-navbar/profile-navbar.component';
 import { ProfileFooterComponent } from './profile-components/profile-footer/profile-footer.component';
+import { ProfileViewComponent } from './views/profile-view/profile-view.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProfileFooterComponent } from './profile-components/profile-footer/prof
     ProfileNavigationComponent, 
     FavoritesViewComponent,
     ProfileNavbarComponent,
-    ProfileFooterComponent
+    ProfileFooterComponent,
+    ProfileViewComponent
   ],
   imports: [
     CommonModule,
