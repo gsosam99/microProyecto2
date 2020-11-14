@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Character } from 'src/app/models/character';
+import { ApiRequestService } from 'src/app/services/api-request.service';
 
 @Component({
   selector: 'app-characters-view',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersViewComponent implements OnInit {
 
-  constructor() { }
+  characters: Array<Character> = [];
+
+  constructor(private apiRequest: ApiRequestService) { }
 
   ngOnInit(): void {
+    this.getCharacters();
   }
 
+  getCharacters(): void{
+    this.apiRequest
+    .getAllCharacters()
+    .then((response) => {
+      console.log('response', response);
+      this.characters = response.data;
+    })
+    .catch((error) => {});
+  }
 }

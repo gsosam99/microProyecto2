@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login-view',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginViewComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup = null;
+
+  constructor(private authService: LoginService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      email: 'email',
+      password: 'password'
+    })
+  }
+
+  loginWithGoogle(){
+    this.authService.loginWithGoogle().then(response => {});
+  }
+
+  logOut(): void{
+    this.authService.logOut().then(response => {
+      this.router.navigate(['/'])
+    })
+  }
+
+  onSubmit(): void{
+    
   }
 
 }

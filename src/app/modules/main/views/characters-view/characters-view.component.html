@@ -1,1 +1,16 @@
-<p>characters-view works!</p>
+<div class="characters-view">
+    <h1>Character's List</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search Bar" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+    <div class="container">
+        <ul>
+            <li *ngFor="let character of characters">
+                <h1>{{ character }}</h1>
+            </li>
+        </ul>
+    </div>
+</div>

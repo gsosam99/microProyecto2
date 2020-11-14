@@ -8,6 +8,7 @@ import { CharactersViewComponent } from './views/characters-view/characters-view
 import { DetailViewComponent } from './views/detail-view/detail-view.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { RegisterViewComponent } from './views/register-view/register-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
@@ -26,7 +27,9 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class MainModule { }
