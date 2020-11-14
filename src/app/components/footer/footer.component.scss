@@ -1,0 +1,26 @@
+@import "src/style/lib/_variables.scss";
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    background-color: $color-black;
+    .footer-container{
+        padding: $padding-general-inside;
+        align-content: center;
+        justify-content: space-around;
+        .li{
+            list-style-type: none;
+            padding: $padding-general;
+            font-weight: 100;
+        }
+        a{
+                list-style: none;
+                transition: all 0.3s ease 0s;
+        }
+        .li :hover{
+            background-color: $color-secondary;
+            padding: $padding-general-inside;
+            border-radius: $border-radius-sm;
+        }
+    }
+}

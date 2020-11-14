@@ -9,9 +9,21 @@ import { DetailViewComponent } from './views/detail-view/detail-view.component';
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { RegisterViewComponent } from './views/register-view/register-view.component';
 
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+
 
 @NgModule({
-  declarations: [MainNavigationComponent, HomeViewComponent, CharactersViewComponent, DetailViewComponent, LoginViewComponent, RegisterViewComponent],
+  declarations: [
+    MainNavigationComponent, 
+    HomeViewComponent, 
+    CharactersViewComponent, 
+    DetailViewComponent, 
+    LoginViewComponent, 
+    RegisterViewComponent,
+    NavbarComponent,
+    FooterComponent,
+],
   imports: [
     CommonModule,
     MainRoutingModule

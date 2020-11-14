@@ -6,8 +6,17 @@ import { ProfileNavigationComponent } from './profile-navigation/profile-navigat
 import { FavoritesViewComponent } from './views/favorites-view/favorites-view.component';
 
 
+import { ProfileNavbarComponent } from './profile-components/profile-navbar/profile-navbar.component';
+import { ProfileFooterComponent } from './profile-components/profile-footer/profile-footer.component';
+
+
 @NgModule({
-  declarations: [ProfileNavigationComponent, FavoritesViewComponent],
+  declarations: [
+    ProfileNavigationComponent, 
+    FavoritesViewComponent,
+    ProfileNavbarComponent,
+    ProfileFooterComponent
+  ],
   imports: [
     CommonModule,
     ProfileRoutingModule

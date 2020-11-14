@@ -1,1 +1,12 @@
+@import "./style/lib/variables";
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $font-color-black;
+    font-family: $font-family;
+}
