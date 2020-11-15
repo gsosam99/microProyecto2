@@ -1,0 +1,39 @@
+@import "src/style/lib/_variables.scss";
+
+.characters-view{
+    display: flex;
+    flex-wrap: wrap row;
+    justify-content: center;
+    padding: $padding-general;
+    .container{
+        border-radius: $border-radius-lg;
+        .container-top{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            .input-group{
+                width: 400px;
+                margin: $margin-general;
+            }
+            .dropdown{
+                margin: $margin-general;
+            }
+            .btn-danger{
+                margin: $margin-general;
+                height: 40px;
+            }
+        }
+        .container-bottom{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            .card{
+                margin: $margin-general;
+                color: $color-darkergrey;
+                button{
+                    margin: 20px 0px 0px 50px;
+                }
+            }
+        }
+    }
+}

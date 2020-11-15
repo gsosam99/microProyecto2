@@ -1,0 +1,14 @@
+@import "src/style/lib/_variables.scss";
+
+.home-view{
+    display: flex;
+    flex-direction: wrap row;
+    justify-content: center;
+    padding: $padding-general;
+    .description{
+        text-align: center;
+        margin: $margin-general;
+        font-size: $font-sm;
+        color: $color-lightgrey;
+    }
+}

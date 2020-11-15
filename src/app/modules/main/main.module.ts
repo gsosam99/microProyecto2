@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { LogoutViewComponent } from './views/logout-view/logout-view.component';
+import { FavoritesViewComponent } from './views/favorites-view/favorites-view.component';
+
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     RegisterViewComponent,
     NavbarComponent,
     FooterComponent,
+    LogoutViewComponent,
+    FavoritesViewComponent,
 ],
   imports: [
     CommonModule,

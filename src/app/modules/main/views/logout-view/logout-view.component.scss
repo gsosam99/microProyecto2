@@ -1,0 +1,7 @@
+@import "src/style/lib/_variables.scss";
+.logout-view{
+    display: flex;
+    flex-wrap: wrap row;
+    justify-content: center;
+    padding: $padding-general;
+}

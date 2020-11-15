@@ -10,16 +10,16 @@ const routes: Routes = [
   {
     path: '', //Profile
     children: [
-      {
-        path: '',
-        canActivate: [AuthGuard],
-        component: ProfileViewComponent
-      },
-      {
-        path: 'favorites',
-        canActivate: [AuthGuard],
-        component: FavoritesViewComponent
-      },
+      // {
+      //   path: '',
+      //   canActivate: [AuthGuard],
+      //   component: ProfileViewComponent
+      // },
+      // {
+      //   path: 'favorites',
+      //   canActivate: [AuthGuard],
+      //   component: FavoritesViewComponent
+      // },
     ],
     component: ProfileNavigationComponent
   }

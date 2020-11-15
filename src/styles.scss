@@ -1,4 +1,6 @@
 @import "./style/lib/variables";
+@import "src/style/components/_container.scss";
+@import "src/style/components/_h1.scss";
 
 *{
     margin: 0;
@@ -7,6 +9,5 @@
 }
 
 body {
-    color: $font-color-black;
     font-family: $font-family;
 }

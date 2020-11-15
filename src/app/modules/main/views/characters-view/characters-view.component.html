@@ -1,16 +1,110 @@
 <div class="characters-view">
-    <h1>Character's List</h1>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search" aria-label="Search Bar" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-        </div>
-      </div>
     <div class="container">
-        <ul>
-            <li *ngFor="let character of characters">
-                <h1>{{ character }}</h1>
-            </li>
-        </ul>
+        <div class="container-top">
+            <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="inputName" class="form-control"
+                    placeholder="Enter the name you'd like to filter" aria-label="Search Bar"
+                    aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        (click)="getName(this.page,inputName)">Search Name</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Species
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="input-group mb-3">
+                        <input type="text" [(ngModel)]="inputSpecies" class="form-control"
+                            placeholder="Enter the species you'd like to filter" aria-label="Search Filter"
+                            aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                (click)="getSpecies(this.page,inputSpecies)">Filter
+                                Species</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Type
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="input-group mb-3">
+                        <input type="text" [(ngModel)]="inputType" class="form-control"
+                            placeholder="Enter the species you'd like to filter" aria-label="Search Filter"
+                            aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                (click)="getType(this.page,inputType)">Filter
+                                Types</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Status
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="getStatus(this.page,'alive')">alive</a>
+                    <a class="dropdown-item" (click)="getStatus(this.page,'dead')">dead</a>
+                    <a class="dropdown-item" (click)="getStatus(this.page,'unknown')">unknown</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gender
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" (click)="getGender(this.page,'female')">female</a>
+                    <a class="dropdown-item" (click)="getGender(this.page,'male')">male</a>
+                    <a class="dropdown-item" (click)="getGender(this.page,'genderless')">genderless</a>
+                    <a class="dropdown-item" (click)="getGender(this.page,'unknown')">unknown</a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger" (click)="getCharacters(this.page)">Clear
+                Filter</button>
+        </div>
+        <div class="container-bottom">
+            <div *ngFor="let character of characters">
+                <div class="card" style="width: 15rem;">
+                    <img src={{character.image}} class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">Name: {{ character.name }}</h3>
+                        <h5 class="card-text">Status: {{ character.status }}</h5>
+                        <h5 class="card-text">Species: {{ character.species }}</h5>
+                        <h5 class="card-text">Gender: {{ character.gender }}</h5>
+                        <h5 class="card-text">Type: {{ character.type }}</h5>
+                        <button type="button" class="btn btn-outline-info"
+                            (click)="addToFavorites(usuario.uid,character.id)" *ngIf="(user | async)"> Add to
+                            Favorites</button>
+                        <a class="btn btn-link" [routerLink] = "['/home/detail', character.id]" routerLinkActive = "router-link-active"
+                        >Character Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disable">
+                    <a class="page-link" (click)="getPrevPage()" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link">{{this.page}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" (click)="getNextPage()" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>

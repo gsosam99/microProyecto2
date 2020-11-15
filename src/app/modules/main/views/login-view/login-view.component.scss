@@ -1,0 +1,25 @@
+@import "src/style/lib/_variables.scss";
+
+.login-view{
+    display: flex;
+    flex-wrap: wrap row;
+    justify-content: center;
+    padding: $padding-general;
+    .container{
+        border-radius: $border-radius-lg;
+        .title{
+            font-size: $font-xxlg;
+        }
+        .google-container{
+            font-size: $font-md;
+            margin: $margin-general;
+            padding: $padding-general-inside;
+        }
+        .credential-container{
+            margin: $margin-general;
+            margin-top: 100px;
+            font-size: $font-md;
+            padding: $padding-general-inside;
+        }
+    }
+}

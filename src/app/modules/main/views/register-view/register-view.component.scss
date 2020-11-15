@@ -1,0 +1,15 @@
+@import "src/style/lib/_variables.scss";
+
+.register-view{
+    display: flex;
+    flex-wrap: wrap row;
+    justify-content: center;
+    padding: $padding-general;
+    .container{
+        min-height: 50vh;
+        border-radius: $border-radius-lg;
+        .title{
+            font-size: $font-xxlg;
+        }
+    }
+}

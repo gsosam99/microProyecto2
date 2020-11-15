@@ -23,6 +23,7 @@ export class LoginViewComponent implements OnInit {
 
   loginWithGoogle(){
     this.authService.loginWithGoogle().then(response => {});
+    this.router.navigate(['/home/favorites'])
   }
 
   logOut(): void{
