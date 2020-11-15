@@ -18,6 +18,10 @@ export class ApiRequestService {
     return Axios.get(this.API_CHARACTERS+"/?page="+page);
   };
 
+  getCharacterDetail(id: number): Promise<AxiosResponse<Character>>{
+    return Axios.get(this.API_CHARACTERS+"/"+id);
+  };
+
   getAllCharactersName(page: number,name: string): Promise<AxiosResponse<Array<Character>>>{
     return Axios.get(this.API_CHARACTERS+"/?page="+page+"&name="+name);
   };

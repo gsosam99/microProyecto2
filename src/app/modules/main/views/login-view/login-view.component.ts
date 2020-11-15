@@ -33,7 +33,8 @@ export class LoginViewComponent implements OnInit {
   }
 
   onSubmit(): void{
-    
+    this.authService.loginWithCredientials(this.loginForm.get('email').value,this.loginForm.get('password').value);
+    this.router.navigate(['/home/favorites'])
   }
 
 }

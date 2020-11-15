@@ -4,4 +4,21 @@
     flex-wrap: wrap row;
     justify-content: center;
     padding: $padding-general;
+
+    .container{
+        border-radius: $border-radius-lg;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .mini-container{
+            margin: $margin-general;
+            .card{
+                margin: $margin-general;
+                color: $color-darkergrey;
+                button{
+                    margin: 20px 0px 0px 10px;
+                }
+            }
+        }
+    }
 }

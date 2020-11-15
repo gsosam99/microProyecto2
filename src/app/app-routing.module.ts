@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import ("../app/modules/main/main.module").then (m => m.MainModule)
     
   },
-  // {
-  //   path: 'profile',
-  //   loadChildren: () => import ("../app/modules/profile/profile.module").then (m => m.ProfileModule)
-  // }
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class RegisterViewComponent implements OnInit {
 
   registerForm: FormGroup = null;
 
-  constructor(private authService: LoginService, private fb: FormBuilder) { }
+  constructor(private authService: LoginService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -21,7 +22,8 @@ export class RegisterViewComponent implements OnInit {
   }
 
   onSubmit(): void{
-    this.authService.singUpWithCredentials(this.registerForm.get('email').value, this.registerForm.get('password').value)
+    this.authService.singUpWithCredentials(this.registerForm.get('email').value, this.registerForm.get('password').value);
+    this.router.navigate(['/home/favorites'])
   }
 
 }

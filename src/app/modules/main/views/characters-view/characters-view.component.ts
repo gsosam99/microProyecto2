@@ -7,6 +7,8 @@ import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { FavCharacters } from 'src/app/models/fav-characters';
+import { Favorite } from 'src/app/models/favorite';
 
 @Component({
   selector: 'app-characters-view',
@@ -28,40 +30,51 @@ export class CharactersViewComponent implements OnInit {
   inputName:string;
   inputSpecies: string;
   inputType: string;
-
+  charactertId: string;
   usuario: firebase.User = null;
-
-  // booleanStatus: boolean;
-  // booleanSearch: boolean;
-  // booleanGender: boolean;
-  // booleanType: boolean;
-  // booleanSpecies: boolean;
   constructor(private apiRequest: ApiRequestService, private authService: LoginService, private router: Router,public afAuth: AngularFireAuth, private FavoriteService: FavoritesService) { }
 
+  
+
   ngOnInit(): void {
-    this.getCurrentUser();
+    // this.getCurrentUser();
     this.page = 1;
     this.getCharacters(this.page);
   }
 
-  getCurrentUser(): void {
-    this.authService.getCurrentUser().subscribe((usuario) =>{
-      this.usuario = usuario;
-      if(usuario){
-        this.FavoriteService.getListOfFavorites(usuario.uid).then((res)=> {
-        if(res.docs.length > 0){
-          this.characters.haveLike = (res.docs[0].get('favorites') as Array<number>)
-        }
-        });
-      }else{
-        this.characters.haveLike = false;
-      }
-    });
+  // getCurrentUser(): void {
+  //   this.authService.getCurrentUser().subscribe((usuario) =>{
+  //     this.usuario = usuario;
+  //     if(usuario){
+  //       this.FavoriteService.getListOfFavorites(usuario.uid).then((res)=> {
+  //       if(res.docs.length > 0){
+  //         this.characters.haveLike = (res.docs[0].get('favorites') as Array<number>)
+  //       }
+  //       });
+  //     }else{
+  //       this.characters.haveLike = false;
+  //     }
+  //   });
+  // }
+
+  createFavorites(newFavorite: Favorite): void{
+    this.FavoriteService.createFavorites(newFavorite).then(res => {
+
+    }).catch(err => console.log(err));
   }
 
-  addToFavorites(userId: string, characterId: number):void{
-    this.FavoriteService.addToFavorites(userId, characterId).then(response => {});
+  onSubmit(id: number, characterName: string, img: string): void {
+    const newFavorite: Favorite = {
+      characterId: id,
+      name: characterName,
+      image: img
+    }
+    this.createFavorites(newFavorite);
   }
+
+  // addToFavorites(userId: string, characterId: number):void{
+  //   this.FavoriteService.addToFavorites(userId, characterId).then(response => {});
+  // }
 
   getCharacters(page: number): void {
     this.apiRequest
@@ -152,4 +165,6 @@ export class CharactersViewComponent implements OnInit {
       this.getCharacters(this.page)
     }
   }
+
+
 }

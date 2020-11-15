@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
-import { FavoritesViewComponent } from '../profile/views/favorites-view/favorites-view.component';
+import { FavoritesViewComponent } from './views/favorites-view/favorites-view.component';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { CharactersViewComponent } from './views/characters-view/characters-view.component';
 import { DetailViewComponent } from './views/detail-view/detail-view.component';

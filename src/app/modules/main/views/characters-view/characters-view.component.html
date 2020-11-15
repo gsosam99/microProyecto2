@@ -83,7 +83,7 @@
                         <h5 class="card-text">Gender: {{ character.gender }}</h5>
                         <h5 class="card-text">Type: {{ character.type }}</h5>
                         <button type="button" class="btn btn-outline-info"
-                            (click)="addToFavorites(usuario.uid,character.id)" *ngIf="(user | async)"> Add to
+                            (click)="onSubmit( character.id, character.name, character.image )" *ngIf="(user | async)"> Add to
                             Favorites</button>
                         <a class="btn btn-link" [routerLink] = "['/home/detail', character.id]" routerLinkActive = "router-link-active"
                         >Character Details</a>

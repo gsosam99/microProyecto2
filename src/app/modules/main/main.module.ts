@@ -14,6 +14,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { LogoutViewComponent } from './views/logout-view/logout-view.component';
 import { FavoritesViewComponent } from './views/favorites-view/favorites-view.component';
+import { SelectedCharacterComponent } from './main-components/selected-character/selected-character.component';
 
 
 
@@ -29,6 +30,7 @@ import { FavoritesViewComponent } from './views/favorites-view/favorites-view.co
     FooterComponent,
     LogoutViewComponent,
     FavoritesViewComponent,
+    SelectedCharacterComponent,
 ],
   imports: [
     CommonModule,
